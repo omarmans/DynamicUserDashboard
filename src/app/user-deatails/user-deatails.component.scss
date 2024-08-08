@@ -1,0 +1,43 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  .user {
+    padding: 20px;
+    background-color: #eee;
+    transition: 0.5s;
+    &:hover {
+      transform: translate(-10px, -5px);
+    }
+
+    img {
+      margin-bottom: 10px;
+      // border-radius: 50%;
+      animation: scale 0.5s infinite alternate;
+      cursor: pointer;
+    }
+    a {
+      transition: 0.5s;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      color: #777;
+      background-color: #ddd;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: scale(1.1);
+  }
+}

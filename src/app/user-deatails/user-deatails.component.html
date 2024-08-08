@@ -1,0 +1,10 @@
+<div class="container">
+  <app-spinner *ngIf="show_spinner"></app-spinner>
+  <div class="user" *ngIf="user">
+    <img [src]="user.avatar" alt="{{ user.first_name }} {{ user.last_name }}" />
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+    <p>ID: {{ user.id }}</p>
+    <p>{{ user.email }}</p>
+    <a routerLink="">back to Users</a>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="search">
+  <input
+    type="search"
+    name=""
+    id="search"
+    #search
+    placeholder="search for user"
+  />
+</div>
+<div class="container">
+  <app-spinner *ngIf="show_spinner"></app-spinner>
+  <div class="users" *ngFor="let user of filtered_data">
+    <!-- here i user custom-Directive -->
+    <div class="user" appHoverColorDirective>
+      <img
+        [src]="user.avatar"
+        alt="{{ user.first_name }} {{ user.last_name }}"
+      />
+      <p>{{ user.first_name }} {{ user.last_name }}</p>
+      <p>ID: {{ user.id }}</p>
+      <a [routerLink]="['/details', user.id]">View Details</a>
+    </div>
+  </div>
+</div>
+<div class="page">
+  <ul>
+    <li *ngFor="let page of total_pages" (click)="getUsers(page)">
+      {{ page }}
+    </li>
+  </ul>
+</div>
